@@ -1,0 +1,109 @@
+#include <Servo.h>
+
+Servo servo1;
+Servo servo3;
+Servo servo4;
+Servo servo5;
+
+
+
+void setup() {
+ 
+  
+  servo1.attach(13);  // attaches servo1 on pin 13 
+  servo3.attach(11); //attaches servo 3 to pin 11
+  servo4.attach(10);  // attaches servo2 on pin 9 
+  servo5.attach(9);  // attaches servo6 on pin 8 
+
+delay(5000);
+
+servo1.write(100); //opens gripper
+delay(1000);
+
+//proceeding to bring down joint 3
+servo3.write(180); 
+delay(500);
+servo3.write(160);
+delay(500);
+servo3.write(140);
+delay(500);
+servo3.write(120);
+delay(500);
+servo3.write(100);
+delay(500);
+servo3.write(90);
+delay(1500);
+
+//proceeding to bring down joint 4 
+servo4.write(80);
+delay(500);
+servo4.write(70);
+delay(500);
+servo4.write(60);
+delay(500);
+servo4.write(50);
+delay(500);
+servo4.write(40);
+delay(500);
+servo4.write(20);
+delay(500);
+servo4.write(10);
+delay(1500);
+
+servo1.write(177); //closes gripper to pick up item
+delay(1500);
+
+//proceeding to bring joint 3 back up
+servo3.write(100); 
+delay(500);
+servo3.write(120);
+delay(500);
+servo3.write(140);
+delay(500);
+servo3.write(160);
+delay(500);
+servo3.write(180);
+delay(1500);
+
+
+//Proceeding to bring joint 4 back up
+servo4.write(20);
+delay(500);
+servo4.write(30);
+delay(500);
+servo4.write(45);
+delay(500);
+servo4.write(60);
+delay(500);
+servo4.write(75);
+delay(500);
+servo4.write(90);
+delay(500);
+servo4.write(100);
+delay(1500); 
+
+//Proceeding to move item to placement destination
+servo5.write(80);
+delay(500);
+servo5.write(70);
+delay(500);
+servo5.write(60);
+delay(500);
+servo5.write(50);
+delay(500);
+servo5.write(40);
+delay(1500);
+
+
+servo1.write(100); //opens gripper to place item
+delay(3000);
+
+
+
+
+
+}
+
+void loop() {
+  // empty loop
+}
